@@ -1,3 +1,14 @@
+# Spammer API Documentation
+
+## GET /messages
+
 ```js
-let x = 5;
+fetch(`${API}/messages`);
+```
+
+```js
+{
+"success": true,
+"messages": [{...}, {...}, {...}]
+}
 ```
