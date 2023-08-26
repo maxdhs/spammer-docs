@@ -1,5 +1,7 @@
 # Spammer API Documentation
 
+`export const API = "https://spammer-backend.onrender.com"`
+
 ## GET /messages
 
 ### Request:
