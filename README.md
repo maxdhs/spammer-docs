@@ -24,6 +24,9 @@ fetch(`${API}/messages`);
 ```js
 fetch(`${API}/messages`, {
   method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
   body: JSON.stringify({
     text: "Hi",
     parentId: "caa490bf-d915-4419-86d0-e6fe95c74239",
@@ -53,6 +56,9 @@ fetch(`${API}/messages`, {
 ```js
 fetch(`${API}/message/b52c4655-3cde-489f-aa93-7869bcc0a802`, {
   method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
   body: JSON.stringify({ text: "Hi2", likes: 10 }),
 });
 ```
