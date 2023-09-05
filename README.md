@@ -85,7 +85,7 @@ fetch(`${API}/messages`, {
 }
 ```
 
-## PUT /message/:messageId
+## PUT /messages/:messageId
 
 ### Request:
 
@@ -122,7 +122,7 @@ fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
 ### Request:
 
 ```js
-fetch(`${API}/message/28006818-1695-4984-83e9-bf0e6a864e08`, {
+fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
   method: "DELETE",
 });
 ```
