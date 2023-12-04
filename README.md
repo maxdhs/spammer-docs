@@ -1,13 +1,13 @@
 # Spammer API Documentation
 
-`export const API = "https://spammer-backend.onrender.com"`
+`export const API = "https://hmh-spammer.netlify.app"`
 
-## GET /messages
+## GET /api/posts
 
 ### Request:
 
 ```js
-fetch(`${API}/messages`);
+fetch(`${API}/api/posts`);
 ```
 
 ### Response:
@@ -15,57 +15,48 @@ fetch(`${API}/messages`);
 ```js
 {
   "success": true,
-  "messages": [
+  "posts": [
     {
-      "id": "22f146a7-9ccd-4be0-8aa4-79f18c09747b",
-      "createdAt": "2023-09-04T19:31:27.794Z",
-      "text": "Cool!",
-      "parentId": null,
+      "id": "cb30e5bf-b5f6-4e15-899b-4ee37227bde0",
+      "text": "hi2",
       "likes": 0,
-      "children": []
+      "createdAt": "2023-12-04T20:17:24.629Z"
     },
     {
-      "id": "52bc023a-69d6-41f3-a2ad-2c9a1c8b375d",
-      "createdAt": "2023-09-04T20:47:58.973Z",
-      "text": "Coding is cool!",
-      "parentId": null,
-      "likes": 0,
-      "children": []
+      "id": "094aaf9e-ec12-4097-86a7-9966c6e85c74",
+      "text": "Step 3: profit",
+      "likes": 3,
+      "createdAt": "2023-12-04T20:16:48.073Z"
     },
     {
-      "id": "74275b9a-9249-4719-aa43-3775ceacdd8a",
-      "createdAt": "2023-09-04T19:32:00.492Z",
-      "text": "sdf",
-      "parentId": null,
+      "id": "af1748d5-b94f-45e1-bb53-34972df54eed",
+      "text": "Step 2: ?",
       "likes": 1,
-      "children": [
-        {
-          "id": "9fc343b0-2c21-4f50-afe8-4760c8678aa5",
-          "createdAt": "2023-09-04T19:32:04.118Z",
-          "text": "wer",
-          "parentId": "74275b9a-9249-4719-aa43-3775ceacdd8a",
-          "likes": 2,
-          "children": []
-        }
-      ]
+      "createdAt": "2023-12-04T20:16:41.225Z"
+    },
+    {
+      "id": "2b0741a7-cbae-4085-9a6d-a22327fea160",
+      "text": "Step 1: Collect all the underpants",
+      "likes": 0,
+      "createdAt": "2023-12-04T20:16:36.893Z"
     }
   ]
 }
+
 ```
 
-## POST /messages
+## POST /api/posts
 
 ### Request:
 
 ```js
-fetch(`${API}/messages`, {
+fetch(`${API}/api/posts`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
     text: "hello back!",
-    parentId: "9760cfca-b8ce-4aed-b0d8-b8fdf7be3c62", // optional field
   }),
 });
 ```
@@ -75,29 +66,27 @@ fetch(`${API}/messages`, {
 ```js
 {
   "success": true,
-  "message": {
-    "id": "28006818-1695-4984-83e9-bf0e6a864e08",
-    "createdAt": "2023-09-05T12:56:22.642Z",
+  "post": {
+    "id": "d9b420f6-57f4-4112-a89e-26a98681c5b5",
     "text": "hello back!",
-    "parentId": "9760cfca-b8ce-4aed-b0d8-b8fdf7be3c62",
-    "likes": 0
+    "likes": 0,
+    "createdAt": "2023-12-04T20:19:52.024Z"
   }
 }
 ```
 
-## PUT /messages/:messageId
+## PUT /api/posts/:postId
 
 ### Request:
 
 ```js
-fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
+fetch(`${API}/api/posts/d9b420f6-57f4-4112-a89e-26a98681c5b5`, {
   method: "PUT",
   headers: {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    text: "HELLO BACK!", // optional field
-    likes: 10, // optional field
+    text: "Bye!",
   }),
 });
 ```
@@ -107,22 +96,21 @@ fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
 ```js
 {
   "success": true,
-  "message": {
-    "id": "28006818-1695-4984-83e9-bf0e6a864e08",
-    "createdAt": "2023-09-05T12:56:22.642Z",
-    "text": "HELLO BACK!",
-    "parentId": "9760cfca-b8ce-4aed-b0d8-b8fdf7be3c62",
-    "likes": 10
+  "post": {
+    "id": "d9b420f6-57f4-4112-a89e-26a98681c5b5",
+    "text": "hello back!",
+    "likes": 0,
+    "createdAt": "2023-12-04T20:19:52.024Z"
   }
 }
 ```
 
-## DELETE /messages/:messageId
+## DELETE /api/posts/:postId
 
 ### Request:
 
 ```js
-fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
+fetch(`${API}/api/posts/d9b420f6-57f4-4112-a89e-26a98681c5b5`, {
   method: "DELETE",
 });
 ```
@@ -132,12 +120,89 @@ fetch(`${API}/messages/28006818-1695-4984-83e9-bf0e6a864e08`, {
 ```js
 {
   "success": true,
-  "message": {
-    "id": "28006818-1695-4984-83e9-bf0e6a864e08",
-    "createdAt": "2023-09-05T12:56:22.642Z",
-    "text": "HELLO BACK!",
-    "parentId": "9760cfca-b8ce-4aed-b0d8-b8fdf7be3c62",
-    "likes": 10
+  "post": {
+    "id": "d9b420f6-57f4-4112-a89e-26a98681c5b5",
+    "text": "hello back!",
+    "likes": 0,
+    "createdAt": "2023-12-04T20:19:52.024Z"
+  }
+}
+```
+
+## GET /api/posts/:postId/comments
+
+### Request:
+
+```js
+fetch(`${API}/api/posts/af1748d5-b94f-45e1-bb53-34972df54eed/comments`);
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "comments": [
+    {
+      "id": "24e2b4f1-dd48-4aa7-9583-4df9b6036cd3",
+      "text": "What is step 2 though?",
+      "createdAt": "2023-12-04T20:17:01.865Z",
+      "postId": "af1748d5-b94f-45e1-bb53-34972df54eed"
+    }
+  ]
+}
+```
+
+## POST /api/posts/:postId/comments
+
+### Request:
+
+```js
+fetch(`${API}/api/posts/af1748d5-b94f-45e1-bb53-34972df54eed/comments`, {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    text: "im starting to think there is no step 2 ...",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "comment": {
+    "id": "3ea77084-528d-4ca2-a52b-5d312dcb4208",
+    "text": "im starting to think there is no step 2 ...",
+    "createdAt": "2023-12-04T20:27:56.168Z",
+    "postId": "af1748d5-b94f-45e1-bb53-34972df54eed"
+  }
+}
+```
+
+## POST /api/posts/:postId/likes
+
+### Request:
+
+```js
+fetch(`${API}/api/posts/af1748d5-b94f-45e1-bb53-34972df54eed/likes`, {
+  method: "POST",
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "post": {
+    "id": "af1748d5-b94f-45e1-bb53-34972df54eed",
+    "text": "Step 2: ?",
+    "likes": 2,
+    "createdAt": "2023-12-04T20:16:41.225Z"
   }
 }
 ```
