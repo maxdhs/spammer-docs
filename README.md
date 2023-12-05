@@ -98,7 +98,7 @@ fetch(`${API}/api/posts/d9b420f6-57f4-4112-a89e-26a98681c5b5`, {
   "success": true,
   "post": {
     "id": "d9b420f6-57f4-4112-a89e-26a98681c5b5",
-    "text": "hello back!",
+    "text": "Bye!",
     "likes": 0,
     "createdAt": "2023-12-04T20:19:52.024Z"
   }
