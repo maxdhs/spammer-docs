@@ -1,6 +1,6 @@
 # Spammer API Documentation
 
-`export const API = "https://hmh-spammer.netlify.app"`
+`export const API = "https://spammer-theta.vercel.app"`
 
 ## GET /api/posts
 
