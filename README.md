@@ -159,7 +159,7 @@ fetch(`${API}/api/posts/af1748d5-b94f-45e1-bb53-34972df54eed/comments`);
 
 ```js
 fetch(`${API}/api/posts/af1748d5-b94f-45e1-bb53-34972df54eed/comments`, {
-  method: "PUT",
+  method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
